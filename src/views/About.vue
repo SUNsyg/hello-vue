@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: Sun yinge
+ * @Date: 2022-06-13 15:17:58
+ * @LastEditTime: 2022-06-15 14:36:21
+ * @LastEditors: Sun yinge
+-->
 <template>
   <div class="about">
     <h1>This is an about page</h1>
@@ -14,9 +21,8 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import { ref, reactive } from 'vue'
-export default defineComponent({
+export default {
   setup() {
     const count = ref(0)
     const state = reactive({
@@ -38,6 +44,6 @@ export default defineComponent({
       add2
     }
   },
-})
+}
 </script>
 
