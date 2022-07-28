@@ -2,37 +2,35 @@
  * @Description:  
  * @Author: Sun yinge
  * @Date: 2022-06-13 15:17:58
- * @LastEditTime: 2022-07-26 16:50:44
+ * @LastEditTime: 2022-07-27 16:41:23
  * @LastEditors: Sun yinge
 -->
 <template>
   <div class="home">
 <!--    <img alt="Vue logo" src="../assets/logo.png">-->
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    111
-    <button @click="getList">请求</button>
+    <header>
+      <div @click="goListPage">帖子列表</div>
+    </header>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import {
-  getListApi
-} from '../api/index';
 export default {
   name: 'Home',
   data() {
     return {
-      listData: []
+      
     }
   },
+  created() {
+    console.log(this.$store.state.postList)
+  },
   methods: {
-    async getList() {
-      const res = await getListApi();
-      if (res) {
-        this.listData = res;
-      }
+    goListPage() {
+      this.$router.push('/list')
     }
   }
   // components: {
@@ -40,3 +38,14 @@ export default {
   // }
 }
 </script>
+
+<style scoped lang="scss">
+.home {
+  width: 100%;
+  min-height: 100vh;
+}
+header {
+  width: 100%;
+  height: 1.5rem;
+}
+</style>

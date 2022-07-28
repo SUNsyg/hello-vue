@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Sun yinge
  * @Date: 2022-06-17 15:27:41
- * @LastEditTime: 2022-07-26 17:07:37
+ * @LastEditTime: 2022-07-27 16:00:46
  * @LastEditors: Sun yinge
  */
 import axios from 'axios';
@@ -22,14 +22,6 @@ instance.interceptors.request.use(function (config) {
     // 对请求错误做些什么
     return Promise.reject(error);
 });
-
-export function get(url, params) {
-    return instance.get(url, params)
-}
-
-export function post(url, params) {
-    return instance.post(url, params)
-}
 
 instance.interceptors.response.use(function (response) {
     // 在发送请求之前做些什么
